@@ -25,6 +25,7 @@ class SignupController extends Controller
         ->get();
 
         $userinterest = DB::table('user_interests')->where('uid','=', $user->id)->get()->pluck('icode');
+        $userinterest = $userinterest->toArray();
         
         return view('interestselection', compact('listdata','userinterest'));
     }
