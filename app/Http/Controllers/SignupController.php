@@ -20,7 +20,8 @@ class SignupController extends Controller
         
         $user = Auth::user();
 
-        $listdata = DB::table('activity_lists')->get();
+        $listdata = DB::table('sub_interests')->get();
+    
 
         return view('interestselection', compact('listdata'));
     }
