@@ -15,7 +15,6 @@ class CreateActivityListsTable extends Migration
     {
         Schema::create('activity_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('did');
             $table->string('contents');
             $table->timestamps();
         });
