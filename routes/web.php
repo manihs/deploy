@@ -27,7 +27,7 @@ Route::post('/interest-selection/all', 'SignupController@all_interest')->name('i
 
 Route::post('/interest-selection/add', 'SignupController@add_interest')->name('interest.add');
 
-Route::post('/interest-selection/add', 'SignupController@remove_interest')->name('interest.remove');
+Route::post('/interest-selection/remove', 'SignupController@remove_interest')->name('interest.remove');
 
 
 

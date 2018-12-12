@@ -8,6 +8,7 @@ use Illuminate\{
 };
 
 use Auth;
+use UserInterest;
 
 class SignupController extends Controller
 {
@@ -33,19 +34,22 @@ class SignupController extends Controller
     public function fetch_interest(Request $request)
     {
         if($request->get('query')){
+
             $user = Auth::user();
 
             $query = strtoupper($request->get('query'));
-            $data = DB::table('activity_lists')
-            ->join('sub_interests', 'activity_lists.did', '=', 'sub_interests.main')
-            ->select('sub_interests.sub', 'activity_lists.did', 'sub_interests.did')
-            ->where('contents', 'LIKE', $query.'%')->get();
+            $listdata = DB::table('activity_lists')
+            ->join('sub_interests','sub_interests.main','=','activity_lists.id')
+            ->where('activity_lists.contents', 'LIKE', $query.'%')
+            ->orWhere('sub_interests.sub','LIKE',$query.'%')
+            ->get();
+            
 
             $userinterest = DB::table('user_interests')->where('uid','=', $user->id)->get()->pluck('icode');
             $userinterest = $userinterest->toArray();
 
             $output = '';
-            foreach($data as $row){
+            foreach($listdata as $row){
                 $output .= '<div class="card m-2" style="width: 9.4rem;">';
                 $output .= '<img class="card-img-top" src="https://dummyimage.com/200x100/000/fff" alt="Card image cap">';
                 $output .= '<div class="card-body">';
@@ -61,6 +65,7 @@ class SignupController extends Controller
             $output .= '';
 
             echo $output;
+        
         }
     }
     public function all_interest(Request $request)
@@ -99,12 +104,10 @@ class SignupController extends Controller
     public function add_interest(Request $request)
     {
         if($request->get('value')){
+            
             $user = Auth::user();
 
-            $userinterest = new UserInterest;
-            $userinterest->uid = $user->id;
-            $userinterest->icode = $request->get('value');
-            $userinterest->save();
+            $add = DB::table('user_interests')->insert(['uid'=>$user->id,'icode'=>$request->get('value')]);
 
             echo $request->get('value');
         }
@@ -113,11 +116,10 @@ class SignupController extends Controller
     public function remove_interest(Request $request)
     {
         if($request->get('value')){
+
             $user = Auth::user();
 
-            $userinterest = DB::table('user_interests')
-            ->where('uid','=', $user->id)
-            ->where('icode','=',$request->get("value"));
+            $userinterest = DB::table('user_interests')->where('uid','=', $user->id)->where('icode','=',$request->get("value"));
             $userinterest->delete();
 
             echo $request->get('value');
