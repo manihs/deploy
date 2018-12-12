@@ -23,6 +23,8 @@ class SignupController extends Controller
         $listdata = DB::table('activity_lists')
         ->join('sub_interests','sub_interests.main','=','activity_lists.id')
         ->get();
+
+        $userinterest = DB::table('user_interests')->where('uid','=', $user->id)->get()->pluck('icode');
         
         return view('interestselection', compact('listdata'));
     }
