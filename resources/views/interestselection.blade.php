@@ -41,4 +41,65 @@
 </div>
 @endsection
 @section('script')
+<script>
+$(document).ready(function(){
+    $('#list').keyup(function(){
+        var query = $(this).val();
+        if(query != '')
+        {
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url : "{{ route('interest.fetch') }}",
+                method : "POST",
+                data : {query: query, _token: _token},
+                success: function(data){
+                    $('#allList').fadeIn();
+                    $('#allList').html(data);
+                }
+            })
+        }else{
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url : "{{ route('interest.all') }}",
+                method : "POST",
+                data : { _token: _token},
+                success: function(data){
+                    $('#allList').fadeIn();
+                    $('#allList').html(data);
+                }
+            })
+        }
+    });
+
+    $("body").delegate(".Man-intra","click", function(){
+        var obj = $(this);
+        var value = obj.children("input[type~=hidden]").val();
+        var _token = $('input[name="_token"]').val();
+        
+        $.ajax({
+            url : "{{ route('interest.add') }}",
+            method : "POST",
+            data : {value : value,  _token: _token},
+            success: function(data){
+                obj.replaceWith('<div class="btn btn-primary Man-intra-de">Cancel<input type="hidden" value="'+data+'"></div>');
+            }
+        });
+    });
+
+    $("body").delegate(".Man-intra-de","click", function(){
+        var obj = $(this);
+        var value = obj.children("input[type~=hidden]").val();
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url : "{{ route('interest.remove') }}",
+            method : "POST",
+            data : {value : value,  _token: _token},
+            success: function(data){
+                obj.replaceWith('<div class="btn btn-primary Man-intra">Select<input type="hidden" value="'+data+'"></div>');
+            }
+        });
+        
+    });
+});
+</script>
 @endsection
