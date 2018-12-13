@@ -41,11 +41,11 @@ class CommunityController extends Controller
             $Community->url = 'default.jpg';   
         }
         $Community->save();    
-        $ids = $Community->id;
+        // $ids = $Community->id;
 
         if($input['type'] = 2){
             $CommunitiesMdetail = new CommunitiesMdetail;
-            $CommunitiesMdetail->cid = $ids;
+            $CommunitiesMdetail->cid = 1;
             $CommunitiesMdetail->category = $input['category'];
             // $CommunitiesMdetail->subc = $input['subc'];
             $CommunitiesMdetail->subc = 1;
@@ -54,7 +54,7 @@ class CommunityController extends Controller
 
         $UserCommunity = new UserCommunity;
         $UserCommunity->user = $user->id;
-        $UserCommunity->community = $ids;
+        $UserCommunity->community = 1;
         $UserCommunity->save();
         return redirect('/home');
     }
