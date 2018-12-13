@@ -51,12 +51,13 @@ class CommunityController extends Controller
             $CommunitiesMdetail->subc = 1;
             $CommunitiesMdetail->save();
         }
-        dd($request->all());
 
         $UserCommunity = new UserCommunity;
         $UserCommunity->user = $user->id;
         $UserCommunity->community = 1;
         $UserCommunity->save();
+        dd($request->all());
+
         return redirect('/home');
     }
 }
