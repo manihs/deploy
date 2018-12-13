@@ -13,17 +13,23 @@ use App\{
     CommunitiesMdetail
 };
 use Auth;
+use Redirect;
 
 
 class CommunityController extends Controller
 {
+    public function new_community_form(){
+
+        return view('createnewcommunity');
+    }
     public function new_community(Request $request)
     {
+        // dd($request->all());
         $input = $request->all();
         $user = Auth::user();
 
         $Community = new Community;
-        $Community->cname = $input['name'];
+        $Community->cname = $input['cname'];
         $Community->uid = $user->id;
         $Community->type = $input['type'];
         if (request()->hasFile('img')) {
@@ -41,7 +47,8 @@ class CommunityController extends Controller
             $CommunitiesMdetail = new CommunitiesMdetail;
             $CommunitiesMdetail->cid = $id;
             $CommunitiesMdetail->category = $input['category'];
-            $CommunitiesMdetail->subc = $input['subc'];
+            // $CommunitiesMdetail->subc = $input['subc'];
+            $CommunitiesMdetail->subc = 1;
             $CommunitiesMdetail->save();
         }
 
@@ -49,6 +56,6 @@ class CommunityController extends Controller
         $UserCommunity->user = $user->id;
         $UserCommunity->community = $id;
         $UserCommunity->save();
-        return 'creating community';
+        return redirect('/home');
     }
 }

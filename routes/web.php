@@ -41,6 +41,12 @@ Route::post('/communities-selection/add', 'SignupController@add_communities')->n
 
 Route::post('/communities-selection/remove', 'SignupController@remove_communities')->name('communities.remove');
 
+// 
+
+Route::get('/new/communities', 'CommunityController@new_community_form')->name('new_community_form');
+
+Route::post('/new/communities', 'CommunityController@new_community')->name('new_community');
+
 
 
 

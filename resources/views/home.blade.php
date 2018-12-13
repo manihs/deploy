@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><a href="#">Create Community</a></td>
+                <td><a href="{{ route('new_community_form') }}">Create Community</a></td>
             </tr>
         </tbody>
     </table>
