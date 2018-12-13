@@ -55,9 +55,9 @@ class SignupController extends Controller
                 $output .= '<div class="card-body">';
                 $output .= '    <h5 class="card-title">'.$row->sub.'</h5>';
                 if(in_array($row->did, $userinterest)){
-                $output .= '    <div class="btn btn-primary Man-intra-de">Cancel<input type="hidden" value="'.$row->did.'"></div>';
+                $output .= '    <div class="btn btn-danger Man-intra-de">Cancel<input type="hidden" value="'.$row->did.'"></div>';
                 }else{
-                $output .= '    <div class="btn btn-primary Man-intra">Select<input type="hidden" value="'.$row->did.'"></div>';
+                $output .= '    <div class="btn btn-success Man-intra">Select<input type="hidden" value="'.$row->did.'"></div>';
                 }
                 $output .= '</div>';
                 $output .= '</div>';
@@ -89,9 +89,9 @@ class SignupController extends Controller
             $output .= '<div class="card-body">';
             $output .= '    <h5 class="card-title">'.$row->sub.'</h5>';
             if(in_array($row->did, $userinterest)){
-                $output .= '    <div class="btn btn-primary Man-intra-de">Cancel<input type="hidden" value="'.$row->did.'"></div>';
+                $output .= '    <div class="btn btn-danger Man-intra-de">Cancel<input type="hidden" value="'.$row->did.'"></div>';
             }else{
-                $output .= '    <div class="btn btn-primary Man-intra">Select<input type="hidden" value="'.$row->did.'"></div>';
+                $output .= '    <div class="btn btn-success Man-intra">Select<input type="hidden" value="'.$row->did.'"></div>';
             }
             $output .= '</div>';
             $output .= '</div>';
