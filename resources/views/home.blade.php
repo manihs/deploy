@@ -3,6 +3,20 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+    <div class="col-md-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Links</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#">Create Community</a></td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
