@@ -29,6 +29,18 @@ Route::post('/interest-selection/add', 'SignupController@add_interest')->name('i
 
 Route::post('/interest-selection/remove', 'SignupController@remove_interest')->name('interest.remove');
 
+// 
+
+Route::get('/communities-selection', 'SignupController@phasetwo')->name('phasetwo');
+
+Route::post('/communities-selection/query', 'SignupController@fetch_communities')->name('communities.fetch');
+
+Route::post('/communities-selection/all', 'SignupController@all_communities')->name('communities.all');
+
+Route::post('/communities-selection/add', 'SignupController@add_communities')->name('communities.add');
+
+Route::post('/communities-selection/remove', 'SignupController@remove_communities')->name('communities.remove');
+
 
 
 
