@@ -10,7 +10,7 @@ use Illuminate\{
 use App\{
     Community,
     UserCommunity,
-    CommunitiesMdetail
+    CommunitiesMdetail,
 };
 use Auth;
 use Redirect;
@@ -24,7 +24,7 @@ class CommunityController extends Controller
     }
     public function new_community(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $input = $request->all();
         $user = Auth::user();
 
