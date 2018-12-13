@@ -140,8 +140,10 @@ class SignupController extends Controller
         $community = $community->toArray();
         
         $listdata = DB::table('communities')
-        ->whereIn('category',  $userinterest)
-        ->orWhereIn('subc',  $userinterest)
+        ->join('communities_mdetails','communities_mdetails.cid','=','communities.id')
+        ->where('communities.type', '=', '2')
+        ->whereIn('communities_mdetails.category',  $userinterest)
+        ->orWhereIn('communities_mdetails.subc',  $userinterest)
         ->get();
 
         return view('communityselection', compact('listdata','community'));
@@ -223,9 +225,12 @@ class SignupController extends Controller
     public function add_communities(Request $request)
     {
         if($request->get('value')){
-        echo "three";
-            
-            
+
+            $user = Auth::user();
+
+            $add = DB::table('user_communities')->insert(['community'=>$request->get('value'),'user'=> $user->id]);
+
+            echo $request->get('value');
         }
     }
 
@@ -233,8 +238,12 @@ class SignupController extends Controller
     {
         if($request->get('value')){
 
-        echo "four";
-            
+            $user = Auth::user();
+
+            $delete = DB::table('user_communities')->where('user','=', $user->id)->where('community','=',$request->get("value"));
+            $delete->delete();
+
+            echo $request->get('value');
         }
     }
 }

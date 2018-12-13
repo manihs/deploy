@@ -15,8 +15,8 @@
                                 {{ csrf_field() }}  
                             </div>
                             <div class="card-header d-flex justify-content-between">
-                            <a href="#" class="btn btn-info" role="button">Skip</a>
-                            <a href="/signuppagethree" class="btn btn-info" role="button">next</a>
+                            <!-- <a href="/" class="btn btn-info" role="button">Skip</a> -->
+                            <a href="/communities-selection" class="btn btn-info" role="button">next</a>
                             </div>
                             <div class="card-body">
                             <div id="allList"  class="d-flex flex-wrap">
@@ -26,9 +26,9 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $row->sub }}</h5>
                                             @if (in_array($row->did, $userinterest))
-                                                <div class="btn btn-primary Man-intra-de">Cancel<input type="hidden" value="{{  $row->did }}"></div>
+                                                <div class="btn btn-danger Man-intra-de">Cancel<input type="hidden" value="{{  $row->did }}"></div>
                                             @else
-                                                <div class="btn btn-primary Man-intra">Select<input type="hidden" value="{{  $row->did }}"></div>
+                                                <div class="btn btn-success Man-intra">Select<input type="hidden" value="{{  $row->did }}"></div>
                                             @endif
                                         </div>
                                     </div>
@@ -80,7 +80,7 @@ $(document).ready(function(){
             method : "POST",
             data : {value : value,  _token: _token},
             success: function(data){
-                obj.replaceWith('<div class="btn btn-primary Man-intra-de">Cancel<input type="hidden" value="'+data+'"></div>');
+                obj.replaceWith('<div class="btn btn-danger Man-intra-de">Cancel<input type="hidden" value="'+data+'"></div>');
             }
         });
     });
@@ -94,7 +94,7 @@ $(document).ready(function(){
             method : "POST",
             data : {value : value,  _token: _token},
             success: function(data){
-                obj.replaceWith('<div class="btn btn-primary Man-intra">Select<input type="hidden" value="'+data+'"></div>');
+                obj.replaceWith('<div class="btn btn-success Man-intra">Select<input type="hidden" value="'+data+'"></div>');
             }
         });
         
