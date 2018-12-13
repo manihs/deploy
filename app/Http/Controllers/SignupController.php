@@ -74,8 +74,7 @@ class SignupController extends Controller
         $user = Auth::user();
 
         $data = DB::table('activity_lists')
-        ->join('sub_interests', 'activity_lists.did', '=', 'sub_interests.main')
-        ->select('sub_interests.sub', 'activity_lists.did', 'sub_interests.did')
+        ->join('sub_interests','sub_interests.main','=','activity_lists.id')
         ->get();
 
         
