@@ -42,6 +42,7 @@ class CommunityController extends Controller
         }
         $Community->save();    
         // $ids = $Community->id;
+        dd($request->all());
 
         if($input['type'] = 2){
             $CommunitiesMdetail = new CommunitiesMdetail;
