@@ -73,7 +73,7 @@ $(document).ready(function(){
                 lastdata += '<div class="input-group-prepend">'
                 lastdata += '<label class="input-group-text submainc" for="inputGroupSelect01">Sub category</label>'
                 lastdata += '</div>'
-                lastdata += '<select name="scategory" class="custom-select" id="inputGroupSelect01">'
+                lastdata += '<select name="subc" class="custom-select" id="inputGroupSelect01">'
                     for(var i in obj){
                         lastdata += '<option value="'+obj[i]+'">'+i+'</option>'
                     }
