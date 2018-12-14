@@ -52,6 +52,50 @@ class PostController extends Controller
                 }
             }
         }
-        return redirect('/');
+        return redirect('/home');
+    }
+
+    // 
+
+    public function new_video_post_form(){
+
+        $user = Auth::user();
+
+        $community = DB::table('user_communities')
+        ->select('communities.id','communities.cname')
+        ->join('communities', 'communities.id', '=', 'user_communities.community')
+        ->where('user','=', $user->id)->get();
+        
+        return view('postvideo', compact('community'));
+    }
+
+    public function new_video_post(Request $request)
+    {
+        if (request()->hasFile('img')) {
+            $user = Auth::user();
+            $input = $request->all();
+            $file = request()->file('img');
+            $name = 'VID'.now()->timestamp.'.'.$file->getClientOriginalExtension();
+            $path = './Users/'.$user->id.'/video'.'/'.date("Y-m-d").'/';
+            
+            if($file->move($path, $name)){   
+                $post = new Post;
+                $post->src = $path."".$name;
+                $post->type = 'VID';
+                $post->uid = $user->id;
+                $post->caption = $input['name'];
+                $post->save();
+
+                $temp = $post->id;
+
+                foreach ($input['community'] as $value) {
+                    $CommunitySharedWith = new CommunitySharedWith;
+                    $CommunitySharedWith->postId = $temp;
+                    $CommunitySharedWith->cmtyId = $value;
+                    $CommunitySharedWith->save();
+                }
+            }
+        }
+        return redirect('/home');
     }
 }

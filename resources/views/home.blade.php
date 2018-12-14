@@ -17,23 +17,28 @@
             <tr>
                 <td><a href="{{ route('new.image.post.form') }}">upload image</a></td>
             </tr>
+            <tr>
+                <td><a href="{{ route('new.video.post.form') }}">upload video</a></td>
+            </tr>
         </tbody>
     </table>
         </div>
         <div class="col-md-8">
+            @if (!empty($posts))
+            <br>
+            @foreach ($posts as $post)
             <div class="card">
-                <div class="card-header">Dashboard</div>
-
+                <div class="card-header">{{ $post->user }} >> {{ $post->community }}</div>
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                    url : {{ $post->src }}
+                    <br>
+                    caption :{{ $post->caption }}
                 </div>
             </div>
+            <br>
+             @endforeach
+            <br>
+            @endif
         </div>
     </div>
 </div>

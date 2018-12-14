@@ -54,3 +54,9 @@ Route::post('/new/communities/sub', 'CommunityController@sub_community_su')->nam
 Route::get('/new/image/post', 'PostController@new_image_post_form')->name('new.image.post.form');
 
 Route::post('/new/image/post', 'PostController@new_image_post')->name('new.image.post');
+
+// 
+
+Route::get('/new/video/post', 'PostController@new_video_post_form')->name('new.video.post.form');
+
+Route::post('/new/video/post', 'PostController@new_video_post')->name('new.video.post');

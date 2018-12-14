@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">image upload</div>
+                <div class="card-header">video upload</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,13 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{ Form::open(['action' => 'PostController@new_image_post','files' => true]) }}
+                    {{ Form::open(['action' => 'PostController@new_video_post','files' => true]) }}
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                            {{ Form::file('img', $attributes = ['class'=>'custom-file-input','id'=>'inputGroupFile01','aria-describedby'=>'inputGroupFileAddon01']) }}
+                            {{ Form::file('img', $attributes = ['class'=>'custom-file-input','id'=>'inputGroupFile01','accept'=>'video/mp4,video/x-m4v,video/*']) }}
                             {{ Form::label('custom-file-label', 'chose img', ['class' => 'custom-file-label']) }}
                         </div>
                     </div>
