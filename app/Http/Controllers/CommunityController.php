@@ -41,7 +41,7 @@ class CommunityController extends Controller
             $Community->url = 'default.jpg';   
         }
         $Community->save();    
-        // $ids = $Community->id;
+        $ids = $Community->id;
 
         if($input['type'] == 2){
             $CommunitiesMdetail = new CommunitiesMdetail;
