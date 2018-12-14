@@ -32,14 +32,14 @@
                         <div class="input-group-prepend">
                             {{ Form::label('inputGroupSelect01', 'Type of community', ['class' => 'input-group-text']) }}
                         </div>
-                        {{ Form::select('type', [1 => 'Private', 2 => 'Public'],'Private' ,['class'=>'custom-select main','id'=>'inputGroupSelect01']) }}
+                        {{ Form::select('type', [1 => 'Private', 2 => 'Public'],'Private' ,['class'=>'custom-select','id'=>'inputGroupSelect01']) }}
                     </div>
                     <!--  -->
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             {{ Form::label('inputGroupSelect01', 'Category', ['class' => 'input-group-text']) }}
                         </div>
-                        {{ Form::select('category', [1 => 'sport', 2 => 'singing', 3 => 'Dancing'],'sport' ,['class'=>'custom-select main','id'=>'inputGroupSelect01']) }}
+                        {{ Form::select('category', $listdata , null ,['class'=>'custom-select main','id'=>'inputGroupSelect01']) }}
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -62,10 +62,11 @@ $(document).ready(function(){
         var value = this.value;
         var _token = $('input[name="_token"]').val();
         $.ajax({
-            url : "",
+            url : "{{ route('sub.new.comm') }}",
             method : "POST",
             data : {value : value,  _token: _token},
             success: function(data){
+                // alert(data);
                 var obj = jQuery.parseJSON(data);
                 var lastdata = ""
                 lastdata += '<div class="input-group mb-3">'

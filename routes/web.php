@@ -47,6 +47,8 @@ Route::get('/new/communities', 'CommunityController@new_community_form')->name('
 
 Route::post('/new/communities', 'CommunityController@new_community')->name('new_community');
 
+Route::post('/new/communities/sub', 'CommunityController@sub_community_su')->name('sub.new.comm');
+
 
 
 

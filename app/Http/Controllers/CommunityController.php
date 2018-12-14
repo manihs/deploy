@@ -20,11 +20,29 @@ class CommunityController extends Controller
 {
     public function new_community_form(){
 
-        return view('createnewcommunity');
+        $listdata = DB::table('activity_lists')
+        ->get()->pluck('contents','id');
+        $listdata = $listdata->toArray();
+
+        return view('createnewcommunity', compact('listdata'));
     }
+
+    public function sub_community_su(Request $request){
+        if($request->get('value')){
+            $inputselect = DB::table('sub_interests')
+            ->where('main','=', $request->get('value'))
+            ->get()->pluck('did','sub');
+            $inputselect = $inputselect->toArray();
+            $inputselect = json_encode($inputselect);
+            // dd($inputselect);
+            echo $inputselect;
+            // echo $request->get('value');
+           }
+    }
+
     public function new_community(Request $request)
     {
-        // dd($request->all());
+
         $input = $request->all();
         $user = Auth::user();
 
@@ -47,8 +65,7 @@ class CommunityController extends Controller
             $CommunitiesMdetail = new CommunitiesMdetail;
             $CommunitiesMdetail->cid = 1;
             $CommunitiesMdetail->category = $input['category'];
-            // $CommunitiesMdetail->subc = $input['subc'];
-            $CommunitiesMdetail->subc = 1;
+            $CommunitiesMdetail->subc = $input['subc'];
             $CommunitiesMdetail->save();
         }
 
@@ -56,7 +73,6 @@ class CommunityController extends Controller
         $UserCommunity->user = $user->id;
         $UserCommunity->community = 1;
         $UserCommunity->save();
-        // dd($request->all());
 
         return redirect('/home');
     }
