@@ -144,7 +144,7 @@ class SignupController extends Controller
         ->whereIn('communities_mdetails.category',  $userinterest)
         ->orWhereIn('communities_mdetails.subc',  $userinterest)
         ->get();
-
+        
         return view('communityselection', compact('listdata','community'));
     }
 

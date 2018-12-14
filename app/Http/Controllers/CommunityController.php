@@ -45,7 +45,6 @@ class CommunityController extends Controller
 
         $input = $request->all();
         $user = Auth::user();
-
         $Community = new Community;
         $Community->cname = $input['cname'];
         $Community->uid = $user->id;
@@ -63,7 +62,7 @@ class CommunityController extends Controller
 
         if($input['type'] == 2){
             $CommunitiesMdetail = new CommunitiesMdetail;
-            $CommunitiesMdetail->cid = 1;
+            $CommunitiesMdetail->cid = $ids;
             $CommunitiesMdetail->category = $input['category'];
             $CommunitiesMdetail->subc = $input['subc'];
             $CommunitiesMdetail->save();
@@ -71,7 +70,7 @@ class CommunityController extends Controller
 
         $UserCommunity = new UserCommunity;
         $UserCommunity->user = $user->id;
-        $UserCommunity->community = 1;
+        $UserCommunity->community = $ids;
         $UserCommunity->save();
 
         return redirect('/home');
