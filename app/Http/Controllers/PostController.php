@@ -18,7 +18,7 @@ class PostController extends Controller
         $user = Auth::user();
 
         $community = DB::table('user_communities')
-        ->select('id','cname')
+        ->select('communities.id','communities.cname')
         ->join('communities', 'communities.id', '=', 'user_communities.community')
         ->where('user','=', $user->id)->get();
         
