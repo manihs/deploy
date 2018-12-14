@@ -9,7 +9,6 @@ use Illuminate\{
 
 use App\{
     Community,
-    UserCommunity,
     CommunitiesMdetail,
 };
 use Auth;
@@ -52,10 +51,10 @@ class CommunityController extends Controller
             $CommunitiesMdetail->save();
         }
 
-        // $UserCommunity = new UserCommunity;
-        // $UserCommunity->user = $user->id;
-        // $UserCommunity->community = 1;
-        // $UserCommunity->save();
+        $UserCommunity = new UserCommunity;
+        $UserCommunity->user = $user->id;
+        $UserCommunity->community = 1;
+        $UserCommunity->save();
         // dd($request->all());
 
         return redirect('/home');

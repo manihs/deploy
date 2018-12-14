@@ -14,6 +14,7 @@ class CreateCommunitiesMdetailsTable extends Migration
     public function up()
     {
         Schema::create('communities_mdetails', function (Blueprint $table) {
+            $table->increments('id');
             $table->biginteger('cid');
             $table->biginteger('category');
             $table->biginteger('subc');

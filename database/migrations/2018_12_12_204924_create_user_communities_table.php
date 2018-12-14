@@ -14,6 +14,7 @@ class CreateUserCommunitiesTable extends Migration
     public function up()
     {
         Schema::create('user_communities', function (Blueprint $table) {
+            $table->increments('id');
             $table->biginteger('community');
             $table->biginteger('user');
             $table->timestamps();

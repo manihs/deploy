@@ -14,6 +14,7 @@ class CreateUserInterestsTable extends Migration
     public function up()
     {
         Schema::create('user_interests', function (Blueprint $table) {
+            $table->increments('id');
             $table->biginteger('uid');
             $table->biginteger('icode');
             $table->timestamps();
