@@ -45,7 +45,7 @@
                         <div class="input-group-prepend">
                             {{ Form::label('inputGroupSelect01', 'Sub category', ['class' => 'input-group-text submainc']) }}
                         </div>
-                        {{ Form::select('scategory', [],'sport' ,['class'=>'custom-select','id'=>'inputGroupSelect01']) }}
+                        {{ Form::select('subc', [],'sport' ,['class'=>'custom-select','id'=>'inputGroupSelect01']) }}
                     </div>
                     {{ Form::submit('Post',['class'=>'btn btn-success']) }}
                     {!! Form::close() !!}
