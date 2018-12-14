@@ -14,6 +14,9 @@
             <tr>
                 <td><a href="{{ route('new_community_form') }}">Create Community</a></td>
             </tr>
+            <tr>
+                <td><a href="{{ route('new.image.post.form') }}">upload image</a></td>
+            </tr>
         </tbody>
     </table>
         </div>

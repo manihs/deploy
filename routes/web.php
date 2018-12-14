@@ -49,6 +49,8 @@ Route::post('/new/communities', 'CommunityController@new_community')->name('new_
 
 Route::post('/new/communities/sub', 'CommunityController@sub_community_su')->name('sub.new.comm');
 
+// 
 
+Route::get('/new/image/post', 'PostController@new_image_post_form')->name('new.image.post.form');
 
-
+Route::post('/new/image/post', 'PostController@new_image_post')->name('new.image.post');
