@@ -56,7 +56,7 @@ class CommunityController extends Controller
         // $UserCommunity->user = $user->id;
         // $UserCommunity->community = 1;
         // $UserCommunity->save();
-        dd($request->all());
+        // dd($request->all());
 
         return redirect('/home');
     }
