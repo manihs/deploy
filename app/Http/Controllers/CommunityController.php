@@ -10,6 +10,7 @@ use Illuminate\{
 use App\{
     Community,
     CommunitiesMdetail,
+    UserCommunity,
 };
 use Auth;
 use Redirect;
