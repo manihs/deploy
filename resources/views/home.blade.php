@@ -30,7 +30,7 @@
             <div class="card">
                 <div class="card-header">{{ $post->user }} >> {{ $post->community }}</div>
                 <div class="card-body">
-                    url : {{ $post->src }}
+                    <img src="{{ asset($post->src) }}" alt="" style="width:100%;"> 
                     <br>
                     caption :{{ $post->caption }}
                 </div>

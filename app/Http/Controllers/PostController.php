@@ -35,6 +35,8 @@ class PostController extends Controller
             $path = './Users/'.$user->id.'/image'.'/'.date("Y-m-d").'/';
             
             if($file->move($path, $name)){   
+                $path = 'Users/'.$user->id.'/image'.'/'.date("Y-m-d").'/';
+
                 $post = new Post;
                 $post->src = $path."".$name;
                 $post->type = 'IMG';
@@ -79,6 +81,8 @@ class PostController extends Controller
             $path = './Users/'.$user->id.'/video'.'/'.date("Y-m-d").'/';
             
             if($file->move($path, $name)){   
+                $path = 'Users/'.$user->id.'/video'.'/'.date("Y-m-d").'/';
+
                 $post = new Post;
                 $post->src = $path."".$name;
                 $post->type = 'VID';
