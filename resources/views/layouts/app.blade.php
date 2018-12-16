@@ -9,16 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/customice.css') }}" rel="stylesheet">
     <!--  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
@@ -26,63 +18,118 @@
    
   </style>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                @endif
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+<nav>
+  <div class="nav-part-one">
+      <div class="logo">
+        flyer
+      </div>
+      <div class="logo">
+          <div class="nav-icons" id="search">
+            <img src="https://img.icons8.com/ios/50/000000/search.png">
+          </div>
+          <div class="nav-icons">
+            <div class="span-message">
+                <img src="https://img.icons8.com/ios/50/000000/sms.png">
+                <span>1</span>
             </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+         </div>
+         <div class="nav-icons">
+           <div class="span-message">
+            <img src="https://img.icons8.com/ios/50/000000/appointment-reminders.png">
+            <span>13</span>
+           </div>
+         </div>
+         <div class="nav-icons">
+          <img src="https://img.icons8.com/material-rounded/50/000000/menu.png">
+        </div>
+      </div>
     </div>
+</nav>
+<!--  -->
+<div class="main_body">
+    @yield('content')
+</div>
+<!--  -->
+<div class="" id="">
+  <div class="menu-model" id="feed"></div>
+  <div class="menu-model" id="video">b</div>
+  <div class="menu-model" id="community">
+    <div class="menu_post_modal">
+      <div>
+        <a href=""><img src="https://img.icons8.com/ios/50/000000/visible.png"></a>
+      </div>
+      <div>
+        <a href=""><img src="https://img.icons8.com/ios/50/000000/edit-administrator.png"></a>
+      </div>
+      <div>
+        <a href=""><img src="https://img.icons8.com/ios/50/000000/add-user-group-man-man.png"></a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-model" id="post">
+     <div class="menu_post_modal">
+        <div>
+    <a href="{{ route('new_community_form') }}"><img src="https://img.icons8.com/ios/50/000000/google-images.png"></a>
+  </div>
+        <div>
+          <a href="{{ route('new.image.post.form') }}"><img src="https://img.icons8.com/ios/40/000000/documentary.png"></a>
+</div>
+        <div>
+          <a href="{{ route('new.video.post.form') }}"><img src="https://img.icons8.com/ios/40/000000/idea.png"></a>
+</div>
+      </div>
+  </div>
+  <div class="menu-model" id="idea">e</div>
+  <div class="menu-model" id="home">f</div>
+</div>
+<footer>
+  <div class="bottom-nav">
+      <div id="feed" class="icon active"><img src="https://img.icons8.com/ios/50/000000/news.png"   style="width:100%"></div>
+      <div id="video" class="icon"><img src="https://img.icons8.com/ios/50/000000/tv-show.png" style="width:100%"></div>
+      <div id="community" class="icon"><img src="https://img.icons8.com/ios/50/000000/user-group-man-man.png" style="width:100%"></div>
+      <div id="post" class="icon"><img src="https://img.icons8.com/ios/50/000000/plus-2-math.png" style="width:100%"></div>
+      <div id="idea" class="icon"><img src="https://img.icons8.com/ios/50/000000/idea-sharing.png" style="width:100%"></div>
+      <div id="home" class="icon"><img src="https://img.icons8.com/ios/50/000000/home-page.png" style="width:100%"></div>
+    </div>
+  </footer>
 </body>
+<script>
+$('body').delegate('#search','click',function(){
+  var two_part = "";
+  two_part += '<div class="nav-part-two"><div class="logo"><div class="nav-icons" id="search-back"><img src="https://img.icons8.com/ios/50/000000/left.png"></div></div><input type="text" id="search-query" placeholder="search here"></div>';
+  two_part += "";
+    $('.nav-part-one').replaceWith(two_part);
+});
+
+$('body').delegate('#search-back','click',function(){
+  var one_part = "";
+   one_part += '<div class="nav-part-one">';
+   one_part +=  '<div class="logo">flyer</div>';
+   one_part +=  '<div class="logo">';
+   one_part +=  '<div class="nav-icons" id="search"><img src="https://img.icons8.com/ios/50/000000/search.png"></div>';
+   one_part +=  '<div class="nav-icons"><div class="span-message"><img src="https://img.icons8.com/ios/50/000000/sms.png"><span>1</span></div></div>';
+   one_part +=  '<div class="nav-icons"><div class="span-message"><img src="https://img.icons8.com/ios/50/000000/appointment-reminders.png"><span>13</span></div></div>';
+   one_part += '<div class="nav-icons"><img src="https://img.icons8.com/material-rounded/50/000000/menu.png"></div></div></div>';       
+  one_part += "";        
+    $('.nav-part-two').replaceWith(one_part);
+});
+
+$('body').delegate('.icon','click',function(){
+  var value = $(this).attr('id');
+  $(".icon").each(function(){
+    $(this).removeClass('active');
+  });
+  $(".menu-model").each(function(){
+    $(this).css('display','none');
+    if($(this).attr('id') == value ){
+      $(this).css('display','block');
+    }
+  });
+   $(this).addClass('active');
+});
+</script>
 @yield('script')
 </html>
+
+
 
