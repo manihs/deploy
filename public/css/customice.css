@@ -118,7 +118,7 @@ color: white;
 
 .main_body{
  min-height: 100%;
- margin-bottom: -40px; /* Put negative height of the footer here */
+ margin-bottom: -100px; /* Put negative height of the footer here */
   padding-bottom: 40px;
 }
 
