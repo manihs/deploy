@@ -23,6 +23,8 @@
       <div class="logo">
         flyer
       </div>
+      @guest
+      @else
       <div class="logo">
           <div class="nav-icons" id="search">
             <img src="https://img.icons8.com/ios/50/000000/search.png">
@@ -44,12 +46,21 @@
         </div>
       </div>
     </div>
+    @endguest
+
 </nav>
 <!--  -->
 <div class="main_body">
     @yield('content')
 </div>
 <!--  -->
+@guest
+<footer>
+  <div class="bottom-nav">
+    @copy rights reserve
+  </div>
+</footer>
+@else
 <div class="" id="">
   <div class="menu-model" id="feed"></div>
   <div class="menu-model" id="video">b</div>
@@ -82,6 +93,7 @@
   <div class="menu-model" id="idea">e</div>
   <div class="menu-model" id="home">f</div>
 </div>
+
 <footer>
   <div class="bottom-nav">
       <div id="feed" class="icon active"><img src="https://img.icons8.com/ios/50/000000/news.png"   style="width:100%"></div>
@@ -92,6 +104,7 @@
       <div id="home" class="icon"><img src="https://img.icons8.com/ios/50/000000/home-page.png" style="width:100%"></div>
     </div>
   </footer>
+  @endguest
 </body>
 <script>
 $('body').delegate('#search','click',function(){
