@@ -45,9 +45,8 @@
           <img src="https://img.icons8.com/material-rounded/50/000000/menu.png">
         </div>
       </div>
+      @endguest
     </div>
-    @endguest
-
 </nav>
 <!--  -->
 <div class="main_body">
@@ -80,14 +79,14 @@
   <div class="menu-model" id="post">
      <div class="menu_post_modal">
         <div>
-    <a href="{{ route('new_community_form') }}"><img src="https://img.icons8.com/ios/50/000000/google-images.png"></a>
-  </div>
+          <a href="{{ route('new_community_form') }}"><img src="https://img.icons8.com/ios/50/000000/google-images.png"></a>
+        </div>
         <div>
           <a href="{{ route('new.image.post.form') }}"><img src="https://img.icons8.com/ios/40/000000/documentary.png"></a>
-</div>
+        </div>
         <div>
           <a href="{{ route('new.video.post.form') }}"><img src="https://img.icons8.com/ios/40/000000/idea.png"></a>
-</div>
+        </div>
       </div>
   </div>
   <div class="menu-model" id="idea">e</div>
