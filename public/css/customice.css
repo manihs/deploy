@@ -115,3 +115,13 @@ color: white;
 .active_modal{
   display:block;
 }
+
+.main_body{
+ min-height: 100%;
+ margin-bottom: -40px; /* Put negative height of the footer here */
+  padding-bottom: 40px;
+}
+
+html,body {
+  height: 100%; /* Needed for container's min-height  */  
+}
