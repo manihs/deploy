@@ -9,7 +9,7 @@
      <div class="avatar">
        </div>
      <div class="avatar_name">
-      <b>{{ $post->user }} >> {{ $post->community }}</b>
+      posted by <b>{{ $post->user }} from {{ $post->community }}</b>
        </div>
     </div>
    <div class="feed_right">
