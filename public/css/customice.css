@@ -4,10 +4,17 @@
   padding: 0px;
   margin: 0px;
 }
+.main_body{
+  padding-top: 59px;
+  padding-bottom: 59px;
+}
 nav{
   padding: 10px;
   background: #ff9800;
   box-shadow: 9px 6px 55px -14px;
+  position: fixed;
+  width: 97%;
+  top: 0;
 }
 .logo{
   font-family: 'Source Sans Pro', sans-serif;
