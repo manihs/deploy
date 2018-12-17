@@ -236,3 +236,45 @@ hr{
   margin-left: 10px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+/* login vala parting */
+
+.lcontainer{
+  height: 100vh;
+  display: flex;
+  background: #f1f1f1ab;
+}
+
+.centered-element{
+margin:auto;
+display: flex;
+width: 80%;
+}
+.group-input{
+width: 100%;
+margin:25px 0px 25px 0px;
+}
+form{
+width: 100%;
+}
+.group-input input{
+width: 100%;
+border-radius: 3px;
+padding: 10px;
+}
+.cntr{
+text-align: center;
+}
+.cntr input{
+padding:9px;
+width:40%;
+border-radius: 5px;
+border:none;
+color: white;
+background: darkorange;
+}
+.login_link{
+  font-size: 18px;
+  margin: 15px 0 7px 0px;
+  color: blue;
+text-align: right;
+}

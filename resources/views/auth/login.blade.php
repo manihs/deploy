@@ -1,6 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="lcontainer">
+  <div class="centered-element">
+    <form method="POST" action="{{ route('login') }}">
+    @csrf
+        <div class="group-input">
+    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+        </div> 
+        <div class="group-input">
+    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>    
+        </div>
+        <div class="btn cntr">
+          <input type="submit" value="login">
+        </div>
+        <div class="login_link">
+          <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>   
+        </div>
+        <div class="login_link">
+          <a href="">Don't have account? create account</a>
+        </div>
+    </form>
+  </div>
+</div>
+
 <form method="POST" action="{{ route('login') }}">
     @csrf
 

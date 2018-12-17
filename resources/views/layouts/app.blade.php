@@ -61,8 +61,6 @@
 </footer>
 @else
 <div class="" id="">
-  <div class="menu-model" id="feed"></div>
-  <div class="menu-model" id="video">b</div>
   <div class="menu-model" id="community">
     <div class="menu_post_modal">
       <div>
@@ -72,35 +70,35 @@
         <a href=""><img src="https://img.icons8.com/ios/50/000000/edit-administrator.png"></a>
       </div>
       <div>
-        <a href=""><img src="https://img.icons8.com/ios/50/000000/add-user-group-man-man.png"></a>
+        <a href="{{ route('new_community_form') }}"><img src="https://img.icons8.com/ios/50/000000/add-user-group-man-man.png"></a>
       </div>
     </div>
   </div>
   <div class="menu-model" id="post">
      <div class="menu_post_modal">
         <div>
-          <a href="{{ route('new_community_form') }}"><img src="https://img.icons8.com/ios/50/000000/google-images.png"></a>
+          <a href="{{ route('new.image.post.form') }}"><img src="https://img.icons8.com/ios/50/000000/google-images.png"></a>
         </div>
         <div>
-          <a href="{{ route('new.image.post.form') }}"><img src="https://img.icons8.com/ios/40/000000/documentary.png"></a>
+          <a href="{{ route('new.video.post.form') }}"><img src="https://img.icons8.com/ios/40/000000/documentary.png"></a>
         </div>
         <div>
-          <a href="{{ route('new.video.post.form') }}"><img src="https://img.icons8.com/ios/40/000000/idea.png"></a>
+          <a href=""><img src="https://img.icons8.com/ios/40/000000/idea.png"></a>
         </div>
       </div>
   </div>
-  <div class="menu-model" id="idea">e</div>
-  <div class="menu-model" id="home">f</div>
+  <!-- <div class="menu-model" id="idea">e</div>
+  <div class="menu-model" id="home">f</div> -->
 </div>
 
 <footer>
   <div class="bottom-nav">
-      <div id="feed" class="icon active"><img src="https://img.icons8.com/ios/50/000000/news.png"   style="width:100%"></div>
-      <div id="video" class="icon"><img src="https://img.icons8.com/ios/50/000000/tv-show.png" style="width:100%"></div>
+      <div id="feed"   onclick="window.location.href='/home'" class="icon active"><img src="https://img.icons8.com/ios/50/000000/news.png"   style="width:100%"></div>
+      <div id="video"  onclick="window.location.href='/video'" class="icon"><img src="https://img.icons8.com/ios/50/000000/tv-show.png" style="width:100%"></div>
       <div id="community" class="icon"><img src="https://img.icons8.com/ios/50/000000/user-group-man-man.png" style="width:100%"></div>
-      <div id="post" class="icon"><img src="https://img.icons8.com/ios/50/000000/plus-2-math.png" style="width:100%"></div>
-      <div id="idea" class="icon"><img src="https://img.icons8.com/ios/50/000000/idea-sharing.png" style="width:100%"></div>
-      <div id="home" class="icon"><img src="https://img.icons8.com/ios/50/000000/home-page.png" style="width:100%"></div>
+      <div id="post"  class="icon"><img src="https://img.icons8.com/ios/50/000000/plus-2-math.png" style="width:100%"></div>
+      <div id="idea"  onclick="window.location.href='/idea'" class="icon"><img src="https://img.icons8.com/ios/50/000000/idea-sharing.png" style="width:100%"></div>
+      <div id="home"  onclick="window.location.href='/profile'" class="icon"><img src="https://img.icons8.com/ios/50/000000/home-page.png" style="width:100%"></div>
     </div>
   </footer>
   @endguest
