@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<form method="POST" action="{{ route('login') }}">
+<!-- <form method="POST" action="{{ route('login') }}">
     @csrf
 
   <div class="logincontainer">
@@ -56,5 +56,5 @@
     <button type="button" onclick="" class="cancelbtn">Register</button>
     <span class="psw">Forgot <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a></span>
   </div>
-</form>
+</form> -->
 @endsection
