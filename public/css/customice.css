@@ -178,3 +178,61 @@ span.psw {
      width: 100%;
   }
 }
+/*  */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.feedContainer{
+  width: 100%;
+  margin-top: 20px;  
+  margin-bottom: 20px;
+  border: 1px solid darKgray;
+  box-shadow: 0px 0px 70px 1px #d8d7d7;
+}
+.feed_icons{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.feed_icon{
+    width: 25px;
+    margin: 5px 10px 0px 2px;
+    
+}
+.feed_icon img{
+  width: 100%;
+}
+.group_icon{
+  display: flex;
+  margin: 6px 10px 10px 10px;
+}
+hr{
+  color: grey;
+}
+.feed_caption{
+  margin: 5px 10px 20px 10px;
+ font-family: 'Source Sans Pro', sans-serif;
+  }
+.feed_header{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin: 10px 10px 5px 10px;;
+}
+.avatar{
+  border: 1px solid gray;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.feed_left{
+  display: flex;
+  align-items: center;
+}
+.avatar_name{
+  margin-left: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+}

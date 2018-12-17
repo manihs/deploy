@@ -1,36 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-        <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-            @if (!empty($posts))
-            <br>
-            @foreach ($posts as $post)
-            <div class="card">
-                <div class="card-header">{{ $post->user }} >> {{ $post->community }}</div>
-                <div class="card-body">
-                    <img src="{{ asset($post->src) }}" alt="" style="width:100%;"> 
-                    <br>
-                    caption :{{ $post->caption }}
-                </div>
-            </div>
-            <br>
-             @endforeach
-            <br>
-            @endif
-        </div>
+@if (!empty($posts))
+@foreach ($posts as $post)
+<div class="feedContainer">
+  <div class="feed_header">
+   <div class="feed_left">
+     <div class="avatar">
+       </div>
+     <div class="avatar_name">
+      <b>{{ $post->user }} >> {{ $post->community }}</b>
+       </div>
+    </div>
+   <div class="feed_right">
+      <div class="feed_icon">
+        <img src="https://img.icons8.com/ios/50/000000/menu-2.png">
+      </div>
+    </div>
+  </div>
+  <img src ="{{ asset($post->src) }}"  style="width:100%">
+<!--   icon  -->
+  <div class="feed_icons"> 
+    <div class="group_icon">
+      <div class="feed_icon">
+        <img src="https://img.icons8.com/ios/50/000000/like.png">
+      </div>
+       <div class="feed_icon">
+          <img src="https://img.icons8.com/ios/50/000000/comments.png">
+      </div>
+      <div class="feed_icon">
+        <img src="https://img.icons8.com/ios/50/000000/forward-arrow.png">
+      </div>     
+     
+    </div>
+    <div class="group_icon">
+     <div class="feed_icon">
+        <img src="https://img.icons8.com/ios/50/000000/bookmark-ribbon.png">
+      </div>
+    </div>
+  </div>
+  <hr>
+    <div class="feed_caption">
+    {{ $post->caption }}
     </div>
 </div>
+@endforeach
+@endif
 @endsection
 @section('script')
 
