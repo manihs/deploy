@@ -140,7 +140,8 @@ $('body').delegate('.icon','click',function(){
    $(this).addClass('active');
 });
 $(document).ready(function(){
-  var _originalSize = $(window).width() + $(window).height()
+  var _originalSize = $(window).width() + $(window).height()-150;
+  alert(_originalSize);
   $(window).resize(function(){
     if($(window).width() + $(window).height() <= _originalSize){
       $("footer").css("display","none");  
