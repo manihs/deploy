@@ -66,7 +66,7 @@
   <div class="menu-model" id="community">
     <div class="menu_post_modal">
       <div>
-        <a href=""><img src="https://img.icons8.com/ios/50/000000/visible.png"></a>
+        <a href=""><img src="https://img.icons8.com/ios/50/000000/overview-pages-4.png"></a>
       </div>
       <div>
         <a href=""><img src="https://img.icons8.com/ios/50/000000/edit-administrator.png"></a>
