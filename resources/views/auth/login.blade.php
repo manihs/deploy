@@ -6,10 +6,10 @@
     <form method="POST" action="{{ route('login') }}">
     @csrf
         <div class="group-input">
-    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+    <input placeholder="Enter email" id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
         </div> 
         <div class="group-input">
-    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>    
+    <input  placeholder="Enter password" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>    
         </div>
         <div class="btn cntr">
           <input type="submit" value="login">
