@@ -49,9 +49,9 @@
     </div>
 </nav>
 <!--  -->
-<div class="main_body">
+
     @yield('content')
-</div>
+
 <!--  -->
 @guest
 <footer>

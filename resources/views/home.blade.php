@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="main_body">
 @if (!empty($posts))
 @foreach ($posts as $post)
 <div class="feedContainer">
@@ -46,6 +47,7 @@
 </div>
 @endforeach
 @endif
+</div>
 @endsection
 @section('script')
 
