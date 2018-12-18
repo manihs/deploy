@@ -18,7 +18,7 @@
           <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>   
         </div>
         <div class="login_link">
-          <a href="">Don't have account? create account</a>
+          Don't have account? <a href="">create account</a>
         </div>
     </form>
   </div>
