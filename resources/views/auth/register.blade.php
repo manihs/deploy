@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="lcontainer">
-  <div class="centered-element">
+  <div class="fcentered-element">
     <form method="POST" action="{{ route('register') }}">
                         @csrf
         <div class="group-input">
