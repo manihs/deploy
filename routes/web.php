@@ -60,3 +60,9 @@ Route::post('/new/image/post', 'PostController@new_image_post')->name('new.image
 Route::get('/new/video/post', 'PostController@new_video_post_form')->name('new.video.post.form');
 
 Route::post('/new/video/post', 'PostController@new_video_post')->name('new.video.post');
+
+
+// 
+Route::post('/post/like', 'PostController@post_like')->name('post.like');
+
+Route::post('/post/dislike', 'PostController@post_dislike')->name('post.dislike');

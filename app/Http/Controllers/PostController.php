@@ -102,4 +102,22 @@ class PostController extends Controller
         }
         return redirect('/home');
     }
+
+    public function post_like(Request $request)
+    {
+        $user = Auth::user();
+        // $input = $request->all();
+        // dd($input);
+        $query = strtoupper($request->get('value'));
+        echo $query;
+    }
+
+    public function post_dislike(Request $request)
+    {
+        $user = Auth::user();
+        // $input = $request->all();
+        // dd($input);
+        $query = strtoupper($request->get('value'));
+        echo $query;
+    }
 }
