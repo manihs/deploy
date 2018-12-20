@@ -66,3 +66,5 @@ Route::post('/new/video/post', 'PostController@new_video_post')->name('new.video
 Route::post('/post/like', 'PostController@post_like')->name('post.like');
 
 Route::post('/post/dislike', 'PostController@post_dislike')->name('post.dislike');
+
+Route::get('/post/comment/{id}', 'PostController@post_comments_model')->name('post.comment.model');

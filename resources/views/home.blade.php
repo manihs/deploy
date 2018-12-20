@@ -27,8 +27,8 @@
       <div class="feed_icon" data-txt='{{ $post->id }}' data-like="no" data-icon-type="like">
         <img src="https://img.icons8.com/ios/50/000000/like.png">
       </div>
-       <div class="feed_icon" data-txt='{{ $post->id }}'>
-          <img src="https://img.icons8.com/ios/50/000000/comments.png">
+       <div class="feed_icon" data-txt='{{ $post->id }}' data-icon-type="comment">
+          <a href="/post/comment/{{ $post->id }}"><img src="https://img.icons8.com/ios/50/000000/comments.png"></a>
       </div>
       <div class="feed_icon" data-txt='{{ $post->id }}'>
         <img src="https://img.icons8.com/ios/50/000000/forward-arrow.png">
@@ -89,6 +89,7 @@ $("body").delegate(".feed_icon","click",function(){
     })
   }
   }
+
 });
 </script>
 @endsection
