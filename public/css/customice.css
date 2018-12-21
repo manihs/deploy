@@ -289,3 +289,55 @@ form{
     color: blue;
   text-align: right;
 }
+/*  */
+#back{
+  margin: 5px;
+}
+.comments_container{
+padding:10px;
+display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.c_avatars{
+  width: 40px;
+  height: 40px;
+  background: black;
+  border-radius: 50%;
+}
+.c_text{
+  flex-grow: 2; 
+  margin-left: 10px;  
+  margin-right: 10px;
+ font-family: 'Source Sans Pro', sans-serif;
+}
+.c_icon{
+   display:flex;
+}
+.c_icon .icon{
+  padding-left: 3px; 
+  padding-righ: 3px;
+  margin-left: 5px; 
+  margin-right: 5px;
+
+
+}
+.c_icon .icon img{
+   width: 27px;
+}
+.bottom_cmpt{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display: flex;
+
+}
+.bottom_cmpt input{
+  padding: 10px;
+  width:80%;
+}
+.bottom_cmpt button{
+  padding: 10px;
+  width:20%;
+}
