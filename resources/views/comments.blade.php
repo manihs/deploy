@@ -9,19 +9,11 @@
 
     <title>Document</title>
 </head>
+{{ csrf_field() }}  
 <body>
 <div id="back"><img src="https://img.icons8.com/ios/50/000000/circled-left.png"></div>
-<div class="comments_container">
-  <div class="c_avatars">
-    <div class="c_avatar">
-      
-    </div>
-  </div>
-  <div class="c_text">{{ $id }}</div>
-  <div class="c_icon">
-        <div class="icon"><img src="https://img.icons8.com/ios/50/000000/hearts.png"></div>
-        <div class="icon"><img src="https://img.icons8.com/ios/50/000000/reply-all-arrow.png"></div>
-  </div>  
+<div class="bodies">
+    
 </div>
 
 <div class="bottom_cmpt">
@@ -36,16 +28,30 @@ $("body").delegate("#back","click",function(){
 $('#inputcomment').keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
-        alert('You pressed a "enter" key in textbox'); 
-    //     var _token = $('input[name="_token"]').val();
-    //     $.ajax({
-    //         url : "{{ route('interest.fetch') }}",
-    //         method : "POST",
-    //         data : {comment: comment, _token: _token},
-    //         success: function(data){
-    //         alert('successfull');
-    //     }
-    // })
+        var comment = $('#inputcomment').val();
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+            url : "{{ route('comment.add') }}",
+            method : "POST",
+            data : {comment: comment, _token: _token, postid: {{ $id }} },
+            success: function(data){
+                var _la = "";
+                _la +=  '<div class="comments_container">';
+                _la +=  '<div class="c_avatars">';
+                _la +=  '<div class="c_avatar">';
+                _la +=  '</div>';
+                _la +=  '</div>';
+                _la +=  '<div class="c_text">'+data+'</div>';
+                _la +=  '<div class="c_icon">';
+                _la +=  '    <div class="icon"><img src="https://img.icons8.com/ios/50/000000/hearts.png"></div>';
+                _la +=  '<div class="icon"><img src="https://img.icons8.com/ios/50/000000/reply-all-arrow.png"></div>';
+                _la +=  '</div>';
+                _la +=  '</div>';
+                _la +=  '';
+                    $('.bodies').append(_la);
+                    $('#inputcomment').val("");
+        }
+    })
     }
 });
 </script>

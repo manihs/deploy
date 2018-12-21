@@ -317,7 +317,7 @@ display:flex;
 }
 .c_icon .icon{
   padding-left: 3px; 
-  padding-righ: 3px;
+  padding-right: 3px;
   margin-left: 5px; 
   margin-right: 5px;
 
@@ -340,4 +340,44 @@ display:flex;
 .bottom_cmpt button{
   padding: 10px;
   width:20%;
+}
+/*  */
+._s_link{
+  text-decoration: none; 
+  color: black;
+}
+.setting-one-body{
+  padding:5px;
+}
+.setting-one-body .setting-heading{
+ font-size: 18px;
+ font-family: 'Montserrat', sans-serif;
+  margin: 5px 0px 4px 0px;
+}
+.setting-one-body .setting-description{
+ font-size: 13px;
+ font-family: 'Montserrat', sans-serif;
+  margin: 5px 0px 6px 0px;
+}
+.setting-detail{
+  display: flex;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+.setting-detail .setting-icon{
+  width:50px;
+  padding:10px;
+  font-size: 30px;
+}
+.setting-detail .setting-name{
+  padding:10px;
+}
+.setting-detail .setting-name .setting-title{
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 2px;
+}
+.setting-detail .setting-name .title-des{
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
 }

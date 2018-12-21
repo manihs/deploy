@@ -129,4 +129,13 @@ class PostController extends Controller
         $id =  $id;
         return view('comments',compact('id'));
     }
+
+    public function post_comments_add(Request $request)
+    {
+        // $user = Auth::user();
+        $query = strtoupper($request->get('comment'));
+        // echo $query;
+        // $model = "<div class='model' style='width: 100%; height: 100vh; background-color: green; z-index: 4; position: absolute; top:0;'></div>";
+        echo($query);
+    }
 }

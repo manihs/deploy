@@ -68,3 +68,13 @@ Route::post('/post/like', 'PostController@post_like')->name('post.like');
 Route::post('/post/dislike', 'PostController@post_dislike')->name('post.dislike');
 
 Route::get('/post/comment/{id}', 'PostController@post_comments_model')->name('post.comment.model');
+
+// setting
+
+Route::get('/setting', 'HomeController@setting')->name('setting');
+
+// comments
+
+Route::post('/comment/add/', 'PostController@post_comments_add')->name('comment.add');
+
+// Route::post('/setting', 'HomeController@setting')->name('setting');
