@@ -6,7 +6,7 @@
                 <div class="row justify-content-center">
                     <div class="col">
                         <div class="card">
-                            <div class="card-header flx">
+                            <div class="card-header">
                                 <div class="input-group mb-3">
                                     <input type="text" id="list" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                                     <div class="input-group-append">
@@ -15,7 +15,7 @@
                                 </div>
                                 {{ csrf_field() }}  
                             </div>
-                            <div class="card-header d-flex justify-content-between">
+                            <div class="card-header nav-header">
                             <!-- <a href="/" class="btn btn-info" role="button">Skip</a> -->
                             <a href="/communities-selection" class="btn btn-info" role="button">next</a>
                             </div>

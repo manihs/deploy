@@ -65,8 +65,9 @@ $("body").delegate(".feed_icon","click",function(){
         method : "POST",
         data : {value: value, _token: _token},
         success: function(data){
+          alert(data);
           var _la = "";
-          _la += "<div class='feed_icon d' data-txt='data' data-like='yes' data-icon-type='like'>";
+          _la += "<div class='feed_icon d' data-txt='"+data+"' data-like='yes' data-icon-type='like'>";
           _la += "<img src='https://img.icons8.com/ios/50/000000/hearts-filled.png'>";
           _la += "</div>";
           _la += "";
@@ -79,8 +80,9 @@ $("body").delegate(".feed_icon","click",function(){
         method : "POST",
         data : {value: value, _token: _token},
         success: function(data){
+          alert(data);
           var _la = "";
-          _la += "<div class='feed_icon' data-txt='data' data-like='no' data-icon-type='like'>";
+          _la += "<div class='feed_icon' data-txt='"+data+"' data-like='no' data-icon-type='like'>";
           _la += "<img src='https://img.icons8.com/ios/50/000000/like.png'>";
           _la += "</div>";
           _la += "";

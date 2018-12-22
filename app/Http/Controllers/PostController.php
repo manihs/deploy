@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use auth;
 use App\Post;
 use App\CommunitySharedWith;
+use App\Like;
 
 use Illuminate\{
     Http\Request,
@@ -106,18 +107,24 @@ class PostController extends Controller
     public function post_like(Request $request)
     {
         $user = Auth::user();
-        // $input = $request->all();
-        // dd($input);
-        $query = strtoupper($request->get('value'));
+
+        $query = $request->get('value');
+
+        $like = new Like;
+        $like->uid = $user->id;
+        $like->pid = $query;
+        $like->save();
+
         echo $query;
     }
 
     public function post_dislike(Request $request)
     {
         $user = Auth::user();
-        // $input = $request->all();
-        // dd($input);
-        $query = strtoupper($request->get('value'));
+
+        $query = $request->get('value');
+        $delete = DB::table('likes')->where('uid','=',$user->id)->where('pid','=',$query)->delete();
+
         echo $query;
     }
     public function post_comments_model(Request $request,$id)
