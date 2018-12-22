@@ -15,7 +15,7 @@
                     </div>
                     {{ csrf_field() }}  
                 </div>
-                <div class="card-header d-flex justify-content-between">
+                <div class="card-header nav-header">
                     <a href="/interest-selection" class="btn btn-info" role="button">Back</a>
                     <a href="/" class="btn btn-info" role="button">Next</a>
                 </div>

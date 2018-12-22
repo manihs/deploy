@@ -408,10 +408,10 @@ display:flex;
 }
 .nav-header{
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: space-between;
 }
-.nav-header * {
+.nav-header a {
   text-decoration: none;
   margin: 4px;
   padding: 7px;
@@ -423,13 +423,13 @@ display:flex;
 
 #allList{
     display: flex;
+    flex-wrap: wrap;
 }
 .card{
   margin: 5px;
 }
 .btn{
   padding: 7px;
-  color: white;
   border-radius: 4px;
   text-align: center;
   width: 100%;
