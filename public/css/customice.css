@@ -381,3 +381,68 @@ display:flex;
   font-size: 13px;
   font-family: 'Montserrat', sans-serif;
 }
+/*  */
+
+.container{
+  width: 100%;
+}
+.col{
+  width:95%;
+  margin: 0 auto;
+}
+
+.input-group{
+  display: flex;
+  align-item: center;
+}
+.card img{
+  width: 100%;
+}
+#list{
+  padding: 7px;
+  flex-grow: 2;
+}
+#button-addon2{
+  padding: 7px;
+  flex-grow: 1;
+}
+.nav-header{
+  display: flex;
+  align-item: center;
+  justify-content: space-between;
+}
+.nav-header * {
+  text-decoration: none;
+  margin: 4px;
+  padding: 7px;
+  border: 1px solid;
+  width: 20%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+#allList{
+    display: flex;
+}
+.card{
+  margin: 5px;
+}
+.btn{
+  padding: 7px;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.btn-danger{
+  background: tomato;
+}
+
+.btn-success{
+  background: #46c728;
+}
+p{
+  margin:5px;
+  text-align: center;
+}

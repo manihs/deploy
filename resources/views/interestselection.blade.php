@@ -4,7 +4,7 @@
 <div class="main_body">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-8">
+                    <div class="col">
                         <div class="card">
                             <div class="card-header flx">
                                 <div class="input-group mb-3">
@@ -25,7 +25,7 @@
                                     <div class="card m-2" style="width: 9.4rem;">
                                         <img class="card-img-top" src="https://dummyimage.com/200x100/000/fff" alt="Card image cap">
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ $row->sub }}</h5>
+                                            <p class="card-title">{{ $row->sub }}</p>
                                             @if (in_array($row->did, $userinterest))
                                                 <div class="btn btn-danger Man-intra-de">Cancel<input type="hidden" value="{{  $row->did }}"></div>
                                             @else
